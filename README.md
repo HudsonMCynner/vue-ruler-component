@@ -1,4 +1,4 @@
-# ruler
+# Ruler
 
 ## Project setup
 ```
