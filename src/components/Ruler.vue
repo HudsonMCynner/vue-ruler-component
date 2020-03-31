@@ -181,20 +181,20 @@ export default {
 </script>
 
 <style
+  lang="stylus"
+  rel="stylesheet/stylus"
   scoped
 >
-.rulers {
-  z-index: 5;
+.rulers
+  z-index 5
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column-reverse;
-}
-.ruler,
-.ruler-top,
-.ruler-bottom {
+
+.ruler
   font-size: 0.6em;
   line-height: 1em;
   letter-spacing: -1px;
@@ -202,102 +202,85 @@ export default {
   text-align: left;
   font-weight: 700;
   padding: 1px 0 0 0;
-  background: #ddd;
-  opacity: 0.8;
-  display: flex;
-  flex-direction: row;
-}
-.ruler .cm,
-.ruler-top .cm,
-.ruler-bottom .cm {
-  display: flex;
-  flex-direction: row;
-}
-.ruler .mm,
-.ruler-top .mm,
-.ruler-bottom .mm {
-  border-right: 1px solid #000;
-  height: 10px;
-  width: 5px;
-}
-.ruler .cm-divisor,
-.ruler-top .cm-divisor,
-.ruler-bottom .cm-divisor {
-  margin: 0;
-  position: relative;
-  height: 6px;
-  top: -2px;
-}
-.ruler span,
-.ruler-top span,
-.ruler-bottom span {
-  display: block;
-  border-right: 1px solid #000;
-  height: 10px;
-  width: 5px;
-}
-.ruler-top {
+  background #ddd
+  opacity 0.8
+  display flex
+  flex-direction row
+  .cm
+    display flex
+    flex-direction row
+  .mm
+    border-right: 1px solid black;
+    height: 10px;
+    width: 5px;
+  .cm-divisor
+    margin: 0;
+    position: relative;
+    height: 6px;
+    top: -2px;
+  span
+    display: block;
+    border-right: 1px solid black;
+    height: 10px;
+    width: 5px;
+
+.ruler-top
+  @extends .ruler
   transform: rotateX(180deg);
-}
-.ruler-middle {
-  opacity: 0.8;
-  position: relative;
-  border-style: double;
-  border-color: #76726a;
-  border-left: 1px;
-  border-right: 1px;
-  background: #ddd;
-  height: 50px;
-  padding: 0 10px;
-}
-.ruler-angle {
+
+.ruler-bottom
+  @extends .ruler
+
+.ruler-middle
+  opacity 0.8
+  position relative
+  border-style double
+  border-color #76726a
+  border-left  1px
+  border-right 1px
+  background: #ddd
+  height 50px
+  padding 0 10px
+
+.ruler-angle
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
   width: 45px;
   height: 45px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ruler-angle .ruler-angle-value {
-  font-size: 10px;
-  font-weight: 800;
-}
-.ruler-angle .ruler-angle-value:after {
-  content: "\00b0";
-  font-size: 19px;
-  color: #000;
-}
-.ruler-size {
-  position: absolute;
-  top: 5px;
-  left: 20px;
-  display: flex;
-  flex-direction: row;
-}
-.ruler-size .ruler-size-add,
-.ruler-size .ruler-size-value,
-.ruler-size .ruler-size-sub {
-  border-radius: 3px;
-  padding: 2px;
-  height: 30px;
-  width: 30px;
-  font-size: 18px;
-  border: 1px solid #000;
-  font-weight: bold;
-  margin: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ruler-size .ruler-size-add:hover,
-.ruler-size .ruler-size-sub:hover {
-  cursor: pointer;
-  background: #fff;
-}
+  border 1px solid black
+  border-radius 50%
+  display flex
+  justify-content center
+  align-items center
+  .ruler-angle-value
+    font-size: 10px;
+    font-weight: 800;
+    &:after
+      content: "\00b0"
+      font-size: 19px;
+      color: black;
 
+.ruler-size
+  position: absolute;
+  top 5px
+  left 20px
+  display flex
+  flex-direction row
+  .ruler-size-add, .ruler-size-value, .ruler-size-sub
+    border-radius: 3px;
+    padding: 2px;
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+    border: 1px solid #000;
+    font-weight: bold;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  .ruler-size-add:hover, .ruler-size-sub:hover
+    cursor pointer
+    background white
 </style>
